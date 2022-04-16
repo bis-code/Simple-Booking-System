@@ -26,10 +26,10 @@ namespace WebAPI.Migrations
                     b.Property<int>("BookedQuantity")
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateOnly>("DateFrom")
+                    b.Property<DateTime>("DateFrom")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateOnly>("DateTo")
+                    b.Property<DateTime>("DateTo")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("ResourceId")

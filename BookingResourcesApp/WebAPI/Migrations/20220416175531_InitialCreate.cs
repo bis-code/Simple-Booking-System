@@ -29,8 +29,8 @@ namespace WebAPI.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    DateFrom = table.Column<DateOnly>(type: "TEXT", nullable: false),
-                    DateTo = table.Column<DateOnly>(type: "TEXT", nullable: false),
+                    DateFrom = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    DateTo = table.Column<DateTime>(type: "TEXT", nullable: false),
                     BookedQuantity = table.Column<int>(type: "INTEGER", nullable: false),
                     ResourceId = table.Column<int>(type: "INTEGER", nullable: false)
                 },

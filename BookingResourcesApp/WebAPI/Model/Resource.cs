@@ -14,4 +14,9 @@ public class Resource
     public int Quantity { get; set; }
     [ForeignKey("ResourceId")]
     public ICollection<Booking> Bookings { get; set; }
+
+    public Resource()
+    {
+        Bookings = new List<Booking>();
+    }
 }

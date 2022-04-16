@@ -9,9 +9,9 @@ public class Booking
     [Required]
     public int Id { get; set; }
     [Required]
-    public DateOnly DateFrom { get; set; }
+    public DateTime DateFrom { get; set; }
     [Required]
-    public DateOnly DateTo { get; set; }
+    public DateTime DateTo { get; set; }
     [Required]
     public int BookedQuantity { get; set; }
     [ForeignKey("ResourceId")]

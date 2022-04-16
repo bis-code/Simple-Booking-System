@@ -11,7 +11,7 @@ using WebAPI.DataAccess;
 namespace WebAPI.Migrations
 {
     [DbContext(typeof(BookingDBContext))]
-    [Migration("20220416102551_InitialCreate")]
+    [Migration("20220416175531_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,10 +28,10 @@ namespace WebAPI.Migrations
                     b.Property<int>("BookedQuantity")
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateOnly>("DateFrom")
+                    b.Property<DateTime>("DateFrom")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateOnly>("DateTo")
+                    b.Property<DateTime>("DateTo")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("ResourceId")

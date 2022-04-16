@@ -10,8 +10,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<BookingDBContext>();
-builder.Services.AddScoped<IResourceService, ResourceService>();
-builder.Services.AddScoped<IBookingService, BookingService>();
+builder.Services.AddScoped<BookingService>();
+builder.Services.AddScoped<ResourceService>();
 
 var app = builder.Build();
 
