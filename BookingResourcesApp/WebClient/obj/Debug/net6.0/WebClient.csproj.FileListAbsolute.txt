@@ -30,3 +30,5 @@ C:\Users\baico\OneDrive - ViaUC\FACULTATE TOT\INTERNSHIP\Plan2Learn\Project\Book
 C:\Users\baico\OneDrive - ViaUC\FACULTATE TOT\INTERNSHIP\Plan2Learn\Project\BookingResourcesApp\WebClient\obj\Debug\net6.0\scopedcss\Pages\Modals\AddResourceModal.razor.rz.scp.css
 C:\Users\baico\OneDrive - ViaUC\FACULTATE TOT\INTERNSHIP\Plan2Learn\Project\BookingResourcesApp\WebClient\obj\Debug\net6.0\scopedcss\Pages\Modals\BookingResourceModal.razor.rz.scp.css
 C:\Users\baico\OneDrive - ViaUC\FACULTATE TOT\INTERNSHIP\Plan2Learn\Project\BookingResourcesApp\WebClient\obj\Debug\net6.0\scopedcss\Pages\Modals\ToastModal.razor.rz.scp.css
+C:\Users\baico\OneDrive - ViaUC\FACULTATE TOT\INTERNSHIP\Plan2Learn\Project\BookingResourcesApp\WebClient\obj\Debug\net6.0\scopedcss\Pages\Modals\RemoveResourceModal.razor.rz.scp.css
+C:\Users\baico\OneDrive - ViaUC\FACULTATE TOT\INTERNSHIP\Plan2Learn\Project\BookingResourcesApp\WebClient\obj\Debug\net6.0\scopedcss\Pages\Modals\RemoveBookingModal.razor.rz.scp.css

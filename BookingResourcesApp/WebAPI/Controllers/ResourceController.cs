@@ -21,6 +21,7 @@ public class ResourceController : ControllerBase
         try
         {
             IList<Resource> resources = await _resourceService.GetAllResourcesAsync();
+            Console.WriteLine("getallresources");
             return Ok(resources);
         }
         catch (Exception e)

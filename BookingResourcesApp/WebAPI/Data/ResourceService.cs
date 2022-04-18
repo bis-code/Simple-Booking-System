@@ -42,6 +42,7 @@ public class ResourceService : IResourceService
 
     public async Task UpdateResourceAsync(Resource resource)
     {
+        Console.WriteLine($"{resource.Quantity} quantity");
         _bookingDbContext.Resources.Update(resource);
         await _bookingDbContext.SaveChangesAsync();
     }

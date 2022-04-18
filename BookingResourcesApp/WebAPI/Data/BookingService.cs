@@ -28,6 +28,9 @@ public class BookingService : IBookingService
     public async Task<Booking> AddBookingAsync(Booking booking)
     {
         await _bookingDbContext.Bookings.AddAsync(booking);
+        Resource resource = await _bookingDbContext.Resources.FirstAsync(r => r.ResourceId == booking.ResourceId);
+        resource.Bookings.Add(booking);
+        _bookingDbContext.Resources.Update(resource);
         await _bookingDbContext.SaveChangesAsync();
         return booking;
     }

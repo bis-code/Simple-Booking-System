@@ -46,6 +46,54 @@
     border-radius: 25px;
     box-shadow: 0 5px 30px 15px #3f3f3f;
 }
+/* _content/WebClient/Pages/Modals/RemoveBookingModal.razor.rz.scp.css */
+.modal-background[b-trvtpet9wt] {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0, 0, 0, 0.47);
+    display:block;
+}
+
+.modal-box[b-trvtpet9wt] {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #000000;
+    width: 30%;
+    min-width: 300px;
+    border-radius: 25px;
+    box-shadow: 0 5px 30px 15px #3f3f3f;
+}
+/* _content/WebClient/Pages/Modals/RemoveResourceModal.razor.rz.scp.css */
+.modal-background[b-vd57rtcpn6] {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0, 0, 0, 0.47);
+    display:block;
+}
+
+.modal-box[b-vd57rtcpn6] {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #000000;
+    width: 30%;
+    min-width: 300px;
+    border-radius: 25px;
+    box-shadow: 0 5px 30px 15px #3f3f3f;
+}
 /* _content/WebClient/Pages/Modals/ToastModal.razor.rz.scp.css */
 .modal-background[b-76rv6o0no8] {
     position: fixed;

@@ -2,6 +2,7 @@
 @using WebClient.Data
 @using WebClient.Model
 @using Modals
+@using System.Net.NetworkInformation
 @inject IResourceService _resourceService
 @inject IBookingService _bookingService
 @inject NavigationManager NavigationManager
@@ -56,9 +57,9 @@ else
                     <td>@item.Name</td>
                     <td>@item.Quantity</td>
                     <td>
-                        @if (item.Bookings.Any())
+                        @if (BookingsCount(item) > 0)
                         {
-                            item.Bookings.Count();
+                            <p>@BookingsCount(item)</p>
                         }
                         else
                         {
@@ -68,7 +69,9 @@ else
                         <a @onclick="@(() => ShowBooking(item))">book here</a>
                     </td>
                     <td>
-
+                        <button type="button" @onclick="@(() => ShowDelete(item.ResourceId))">
+                            <a class="oi oi-trash"/>
+                        </button>
                     </td>
                 </tr>
                 //for booking
@@ -154,8 +157,23 @@ else
 {
     <ToastModal>
         <p>EMAIL SENT TO admin@admin.com FOR CREATED BOOKING WITH ID @newBookingId</p>
-        <button @onclick="@Proceed">Super!</button>
+        <button @onclick="@ProceedToast">Super!</button>
     </ToastModal>
+}
+
+@if (showDeleteResource)
+{
+    <RemoveResourceModal>
+        <p>Are you sure you want to delete resource with ID: @removeResourceId</p>
+        @if (!string.IsNullOrEmpty(deleteErrorMessage))
+        {
+            <div>
+                <label style="color: red">@deleteErrorMessage</label>
+            </div>
+        }
+        <button @onclick="AcceptDelete">Yes</button>
+        <button class="btn-danger" @onclick="@(() => showDeleteResource = false)">No</button>
+    </RemoveResourceModal>
 }
 
 @code {
@@ -165,21 +183,25 @@ else
     private Resource resourceToAdd = new Resource();
     private Booking bookingToAdd = new Booking();
     private Resource resourceForBooking = new Resource();
-    private int? newBookingId;
+    private int removeResourceId = 0;
+    private int newBookingId = 0;
 
     private string addErrorMessage = string.Empty;
     private string errorMessage = string.Empty;
     private string bookResourceErrorMessage = string.Empty;
+    private string deleteErrorMessage = string.Empty;
 
     private bool showModalAdd;
     private bool showModalBooking;
     private bool showSuccessfulBooking;
+    private bool showDeleteResource;
 
     protected override async Task OnInitializedAsync()
     {
         try
         {
             resources = await _resourceService.GetAllResourcesAsync();
+            bookingsCheck = await _bookingService.GetAllBookingsAsync();
         }
         catch (Exception e)
         {
@@ -199,6 +221,8 @@ else
             await _resourceService.AddResourceAsync(resourceToAdd);
             showModalAdd = false;
             NavigationManager.NavigateTo("/Resources");
+            resources = await _resourceService.GetAllResourcesAsync();
+            StateHasChanged();
         }
         catch (Exception e)
         {
@@ -208,32 +232,45 @@ else
 
     private void ShowBooking(Resource resource)
     {
-        resourceForBooking = resource;
-        showModalBooking = true;
+        try
+        {
+            if (resource.Quantity == 0) throw new BookingAlreadyMadeException("There is no quantity to be booked for thisr resource.");
+            resourceForBooking = resource;
+            showModalBooking = true;
+        }
+        catch (Exception e)
+        {
+            errorMessage = e.Message;
+        }
+        
     }
 
     private async Task AcceptBooking(Resource resource)
     {
         try
         {
-            bookingToAdd.ResourceId = resource.ResourceId;
-            Resource updatedResource = resource;
-            if (updatedResource.Quantity > bookingToAdd.BookedQuantity)
+            if (bookingsCheck.Any())
             {
-                updatedResource.Quantity -= bookingToAdd.BookedQuantity;
-            }
-            bookingsCheck = await _bookingService.GetAllBookingsAsync();
-            foreach (Booking booking in bookingsCheck)
-            {
-                if (booking.ResourceId == bookingToAdd.ResourceId)
+                foreach (Booking booking in bookingsCheck)
                 {
-                    if (bookingToAdd.DateTo.CompareTo(booking.DateTo) == 1 || bookingToAdd.DateFrom.CompareTo(booking.DateTo) == -1)
+                    if (booking.ResourceId == bookingToAdd.ResourceId)
                     {
-                        throw new BookingAlreadyMadeException("There is already a booking made in that period.\n Please add another time.");
+                        if (bookingToAdd.DateFrom.CompareTo(booking.DateFrom) == 1 && 
+                            bookingToAdd.DateFrom.CompareTo(booking.DateTo) == -1 ||
+                            bookingToAdd.DateTo.CompareTo(booking.DateTo) == -1)
+                        {
+                            throw new BookingAlreadyMadeException("There is already a booking made in that period.\n Please add another time.");
+                        }
+                        if(booking.BookedQuantity < resource.Quantity)
+                        {
+                            throw new BookingAlreadyMadeException("The quantity is bigger than the quantity resource has.");
+                        }
                     }
                 }
             }
-            await _resourceService.UpdateResourceAsync(updatedResource);
+            bookingToAdd.ResourceId = resource.ResourceId;
+            resource.Quantity -= bookingToAdd.BookedQuantity;
+            await _resourceService.UpdateResourceAsync(resource);
             await _bookingService.AddBookingAsync(bookingToAdd);
             bookingsCheck = await _bookingService.GetAllBookingsAsync();
             newBookingId = bookingsCheck[^1].Id;
@@ -243,6 +280,8 @@ else
             }
             showModalBooking = false;
             showSuccessfulBooking = true;
+            resources = await _resourceService.GetAllResourcesAsync();
+            StateHasChanged();
         }
         catch (Exception e)
         {
@@ -250,9 +289,57 @@ else
         }
     }
 
-    private async Task Proceed()
+    private void ProceedToast()
     {
-        NavigationManager.NavigateTo("/Resources");
+        showSuccessfulBooking = false;
+        NavigationManager.NavigateTo("/Bookings");
+    }
+
+    private void ShowDelete(int resourceId)
+    {
+        removeResourceId = resourceId;
+        showDeleteResource = true;
+    }
+
+    private async Task AcceptDelete()
+    {
+        try
+        {
+            bookingsCheck = await _bookingService.GetAllBookingsAsync();
+            if (bookingsCheck.Any())
+            {
+                foreach (var booking in bookingsCheck)
+                {
+                    if (booking.ResourceId == removeResourceId)
+                    {
+                        throw new BookingAlreadyMadeException("There are bookings made with this resource.\nYou cannot delete it.");
+                    }
+                }
+            }
+            await _resourceService.RemoveResourceAsync(removeResourceId);
+            showDeleteResource = false;
+            NavigationManager.NavigateTo("/Resources");
+            resources = await _resourceService.GetAllResourcesAsync();
+            StateHasChanged();
+        }
+        catch (Exception e)
+        {
+            deleteErrorMessage = e.Message;
+        }
+    }
+
+    private int BookingsCount(Resource resource)
+    {
+        int count = 0;
+        if (!bookingsCheck.Any()) return count;
+        foreach (var booking in bookingsCheck)
+        {
+            if (booking.ResourceId == resource.ResourceId)
+            {
+                count++;
+            }
+        }
+        return count;
     }
 
 }

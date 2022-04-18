@@ -10,107 +10,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aff22d07-ffe7-4cb5-9f7f-bc5b6b8a619b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/WebClient/App.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/Data/BookingService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/Data/IBookingService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/Data/IResourceService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/Data/ResourceService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/Model/Booking.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/Model/Exceptions/BookingAlreadyMadeException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/Model/Resource.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/Pages/Bookings.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/Pages/Error.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/Pages/Error.cshtml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/Pages/Index.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/Pages/Modals/AddResourceModal.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/Pages/Modals/AddResourceModal.razor.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/Pages/Modals/BookingResourceModal.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/Pages/Modals/BookingResourceModal.razor.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/Pages/Modals/ToastModal.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/Pages/Modals/ToastModal.razor.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/Pages/Resources.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/Pages/_Host.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/Pages/_Layout.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/Properties/launchSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/Shared/MainLayout.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/Shared/MainLayout.razor.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/Shared/NavMenu.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/Shared/NavMenu.razor.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/WebClient.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/_Imports.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/appsettings.Development.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/appsettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/bin/Debug/net6.0/WebClient.deps.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/bin/Debug/net6.0/WebClient.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/bin/Debug/net6.0/WebClient.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/bin/Debug/net6.0/WebClient.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/bin/Debug/net6.0/WebClient.runtimeconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/bin/Debug/net6.0/WebClient.staticwebassets.runtime.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/bin/Debug/net6.0/appsettings.Development.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/bin/Debug/net6.0/appsettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/WebClient.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/WebClient.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/WebClient.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/WebClient.GlobalUsings.g.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/WebClient.MvcApplicationPartsAssemblyInfo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/WebClient.RazorAssemblyInfo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/WebClient.RazorAssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/WebClient.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/WebClient.csproj.AssemblyReference.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/WebClient.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/WebClient.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/WebClient.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/WebClient.genruntimeconfig.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/WebClient.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/apphost.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/ref/WebClient.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/refint/WebClient.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/scopedcss/Shared/MainLayout.razor.rz.scp.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/scopedcss/Shared/NavMenu.razor.rz.scp.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/scopedcss/bundle/WebClient.styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/scopedcss/projectbundle/WebClient.bundle.scp.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/staticwebassets.build.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/staticwebassets.development.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/obj/WebClient.csproj.nuget.dgspec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/obj/WebClient.csproj.nuget.g.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/obj/WebClient.csproj.nuget.g.targets" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/obj/project.assets.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/obj/project.nuget.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/obj/project.packagespec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/obj/rider.project.restore.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/obj/staticwebassets.pack.sentinel" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/wwwroot/css/bootstrap/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/wwwroot/css/bootstrap/bootstrap.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/wwwroot/css/open-iconic/FONT-LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/wwwroot/css/open-iconic/ICON-LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/wwwroot/css/open-iconic/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/wwwroot/css/open-iconic/font/fonts/open-iconic.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/wwwroot/css/open-iconic/font/fonts/open-iconic.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/wwwroot/css/open-iconic/font/fonts/open-iconic.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/wwwroot/css/open-iconic/font/fonts/open-iconic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/wwwroot/css/open-iconic/font/fonts/open-iconic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/wwwroot/css/site.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/wwwroot/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BookingResourcesApp/.idea/dataSources/1a3e35dd-77f7-4f8f-aed9-9a799a0aa84f.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebClient/Pages/Modals/RemoveBookingModal.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebClient/Pages/Modals/RemoveBookingModal.razor.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebClient/Pages/Modals/RemoveResourceModal.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebClient/Pages/Modals/RemoveResourceModal.razor.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BookingResourcesApp/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BookingResourcesApp/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BookingResourcesApp/.idea/dataSources.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BookingResourcesApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BookingResourcesApp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookingResourcesApp.sln" beforeDir="false" afterPath="$PROJECT_DIR$/BookingResourcesApp.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/.idea/.idea.WebAPI.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/.idea/.idea.WebAPI.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebAPI/Booking.db" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Booking.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/Controllers/ResourceController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Controllers/ResourceController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/Data/BookingService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Data/BookingService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/Data/ResourceService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Data/ResourceService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/Migrations/20220416175531_InitialCreate.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/Migrations/20220416175531_InitialCreate.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/WebAPI/bin/Debug/net6.0/WebAPI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/bin/Debug/net6.0/WebAPI.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebAPI/bin/Debug/net6.0/WebAPI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/bin/Debug/net6.0/WebAPI.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/obj/Debug/net6.0/WebAPI.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/obj/Debug/net6.0/WebAPI.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/obj/Debug/net6.0/WebAPI.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/obj/Debug/net6.0/WebAPI.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/obj/Debug/net6.0/WebAPI.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/obj/Debug/net6.0/WebAPI.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebAPI/obj/Debug/net6.0/WebAPI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/obj/Debug/net6.0/WebAPI.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/obj/Debug/net6.0/WebAPI.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/obj/Debug/net6.0/WebAPI.genruntimeconfig.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebAPI/obj/Debug/net6.0/WebAPI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/obj/Debug/net6.0/WebAPI.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/obj/WebAPI.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/obj/WebAPI.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/obj/WebAPI.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/obj/WebAPI.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/obj/Debug/net6.0/ref/WebAPI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/obj/Debug/net6.0/ref/WebAPI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/obj/Debug/net6.0/refint/WebAPI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/obj/Debug/net6.0/refint/WebAPI.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebAPI/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/obj/staticwebassets.pack.sentinel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebClient/Data/BookingService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebClient/Data/BookingService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebClient/Data/IBookingService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebClient/Data/IBookingService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebClient/Data/IResourceService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebClient/Data/IResourceService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebClient/Data/ResourceService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebClient/Data/ResourceService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebClient/Pages/Bookings.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WebClient/Pages/Bookings.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebClient/Pages/Index.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WebClient/Pages/Index.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebClient/Pages/Resources.razor" beforeDir="false" afterPath="$PROJECT_DIR$/WebClient/Pages/Resources.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebClient/bin/Debug/net6.0/WebClient.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebClient/bin/Debug/net6.0/WebClient.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebClient/bin/Debug/net6.0/WebClient.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebClient/bin/Debug/net6.0/WebClient.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/WebClient.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/WebClient.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/WebClient.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/WebClient.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/WebClient.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/WebClient.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/WebClient.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/WebClient.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/ref/WebClient.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/ref/WebClient.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/refint/WebClient.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/refint/WebClient.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/scopedcss/bundle/WebClient.styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/scopedcss/bundle/WebClient.styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/scopedcss/projectbundle/WebClient.bundle.scp.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebClient/obj/Debug/net6.0/scopedcss/projectbundle/WebClient.bundle.scp.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebClient/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/WebClient/obj/staticwebassets.pack.sentinel" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,8 +64,10 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cff4d35895d3db30db86a0ec21297ac77589b961f6e219dede5a24aff0bb3b8d/ComponentBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebClient/Pages/Resources.razor" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a9cbda3784706aeeed61f1a08a18046925b69f777943eca27fbbcca09dff60/DateTime.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8e74803b88261fc723cfb0c2383759429dc5ef4fddf2ec9ade5f02b983c81e3/EventCallbackWorkItem.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -145,7 +85,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.WebAPI">
+  <component name="RunManager" selected=".NET Launch Settings Profile.WebClient">
     <configuration name="BlazorApp1" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BlazorApp1/BlazorApp1.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net6.0" />
@@ -250,7 +190,7 @@
       <workItem from="1650147544031" duration="2970000" />
       <workItem from="1650194685020" duration="2740000" />
       <workItem from="1650289406012" duration="2433000" />
-      <workItem from="1650299220394" duration="3615000" />
+      <workItem from="1650299220394" duration="13275000" />
     </task>
     <task id="LOCAL-00001" summary="Web API part">
       <created>1650127631908</created>
@@ -266,7 +206,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650131909368</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Almost done...(NotImplemented Exception problem)">
+      <created>1650303003179</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1650303003179</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -290,6 +237,27 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Web API part" />
     <MESSAGE value="API part works." />
-    <option name="LAST_COMMIT_MESSAGE" value="API part works." />
+    <MESSAGE value="Almost done...(NotImplemented Exception problem)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Almost done...(NotImplemented Exception problem)" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/WebClient/Pages/Resources.razor</url>
+          <line>119</line>
+          <properties documentPath="C:\Users\baico\OneDrive - ViaUC\FACULTATE TOT\INTERNSHIP\Plan2Learn\Project\BookingResourcesApp\WebClient\Pages\Resources.razor" initialLine="117" isMultiMethodBreakpoint="true">
+            <option name="multiMethodBreakpoint" value="true" />
+            <startOffsets>
+              <option value="-1" />
+            </startOffsets>
+            <endOffsets>
+              <option value="-1" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

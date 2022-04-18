@@ -23,7 +23,7 @@ public class ResourceService : IResourceService
         return resources;
     }
 
-    public async Task<Resource?> GetResourceAsync(int resourceId)
+    public async Task<Resource> GetResourceAsync(int resourceId)
     {
         Task<string> stringAsync = client.GetStringAsync($"{uri}/Resource/{resourceId}");
         string message = await stringAsync;
@@ -53,7 +53,7 @@ public class ResourceService : IResourceService
         HttpContent content = new StringContent(resourceAsJson,
             Encoding.UTF8,
             "application/json");
-        HttpResponseMessage responseMessage = await client.PutAsync($"{uri}/Resource/{resource.ResourceId}", content);
+        HttpResponseMessage responseMessage = await client.PutAsync($"{uri}/Resource", content);
         return responseMessage.IsSuccessStatusCode;
     }
 }

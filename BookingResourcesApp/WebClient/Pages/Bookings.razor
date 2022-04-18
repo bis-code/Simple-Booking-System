@@ -1,6 +1,126 @@
 @page "/Bookings"
+@using WebClient.Model
+@using Modals
+@using WebClient.Data
+@inject IBookingService _bookingService
+@inject IResourceService _resourceService
 <h3>Bookings</h3>
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <label style="color: red">@errorMessage</label>
+}
+
+@if (bookings == null)
+{
+    <div>
+        <label>There's no booking</label>
+    </div>
+}
+else if (!bookings.Any())
+{
+    <div>
+        <label>There's no booking</label>
+    </div>
+}
+else
+{
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">From</th>
+                <th scope="col">To</th>
+                <th scope="col">Booked Quantity</th>
+                <th scope="col">Resource Id</th>
+                <th scope="col">Remove</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in bookings)
+            {
+                <tr>
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>@item.DateFrom.ToString("dd/MM/yyyy")</td>
+                    <td>@item.DateTo.ToString("dd/MM/yyyy")</td>
+                    <td>
+                        @item.BookedQuantity
+                    </td>
+                    <td>
+                        @item.ResourceId
+                    </td>
+                    <td>
+                        <button type="button" @onclick="@(() => ShowDeleteModal(item))">
+                            <a class="oi oi-trash"/>
+                        </button>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+}
+
+@if (showDelete)
+{
+    <RemoveBookingModal>
+        <p>Are you sure you want to delete booking with ID: @bookingId</p>
+        @if (!string.IsNullOrEmpty(deleteErrorMessage))
+        {
+            <div>
+                <label style="color: red">@deleteErrorMessage</label>
+            </div>
+        }
+        <button @onclick="AcceptDelete">Yes</button>
+        <button class="btn btn-danger btn-sm" @onclick="@(() => showDelete = false)">No</button>
+    </RemoveBookingModal>
+}
 
 @code {
-    
+    private IList<Booking> bookings;
+
+    private string errorMessage = string.Empty;
+    private string deleteErrorMessage = string.Empty;
+
+    private bool showDelete;
+
+    private int bookingId = 0;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            bookings = await _bookingService.GetAllBookingsAsync();
+        }
+        catch (Exception e)
+        {
+            errorMessage = e.Message;
+        }
+    }
+
+    private void ShowDeleteModal(Booking booking)
+    {
+        bookingId = booking.Id;
+        showDelete = true;
+    }
+
+    private async Task AcceptDelete()
+    {
+        try
+        {
+            Booking bookingToBeRemoved = await _bookingService.GetBookingAsync(bookingId);
+            Resource updateResource = await _resourceService.GetResourceAsync(bookingToBeRemoved.ResourceId);
+            updateResource.Quantity += bookingToBeRemoved.BookedQuantity;
+            await _resourceService.UpdateResourceAsync(updateResource);
+            await _bookingService.RemoveBookingAsync(bookingId);
+            bookings = await _bookingService.GetAllBookingsAsync();
+            showDelete = false;
+        }
+        catch (Exception e)
+        {
+            deleteErrorMessage = e.Message;
+        }
+    }
 }
