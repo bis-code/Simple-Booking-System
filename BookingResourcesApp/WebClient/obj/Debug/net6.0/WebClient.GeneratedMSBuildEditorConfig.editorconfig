@@ -1,0 +1,68 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = WebClient
+build_property.RootNamespace = WebClient
+build_property.ProjectDir = C:\Users\baico\OneDrive - ViaUC\FACULTATE TOT\INTERNSHIP\Plan2Learn\Project\BookingResourcesApp\WebClient\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\baico\OneDrive - ViaUC\FACULTATE TOT\INTERNSHIP\Plan2Learn\Project\BookingResourcesApp\WebClient
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/baico/OneDrive - ViaUC/FACULTATE TOT/INTERNSHIP/Plan2Learn/Project/BookingResourcesApp/WebClient/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/baico/OneDrive - ViaUC/FACULTATE TOT/INTERNSHIP/Plan2Learn/Project/BookingResourcesApp/WebClient/Pages/Bookings.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va2luZ3MucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/baico/OneDrive - ViaUC/FACULTATE TOT/INTERNSHIP/Plan2Learn/Project/BookingResourcesApp/WebClient/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/baico/OneDrive - ViaUC/FACULTATE TOT/INTERNSHIP/Plan2Learn/Project/BookingResourcesApp/WebClient/Pages/Resources.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzb3VyY2VzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/baico/OneDrive - ViaUC/FACULTATE TOT/INTERNSHIP/Plan2Learn/Project/BookingResourcesApp/WebClient/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/baico/OneDrive - ViaUC/FACULTATE TOT/INTERNSHIP/Plan2Learn/Project/BookingResourcesApp/WebClient/Pages/Modals/AddResourceModal.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW9kYWxzXEFkZFJlc291cmNlTW9kYWwucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-jyb6lq03l7
+
+[C:/Users/baico/OneDrive - ViaUC/FACULTATE TOT/INTERNSHIP/Plan2Learn/Project/BookingResourcesApp/WebClient/Pages/Modals/BookingResourceModal.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW9kYWxzXEJvb2tpbmdSZXNvdXJjZU1vZGFsLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-xxnkvhi00q
+
+[C:/Users/baico/OneDrive - ViaUC/FACULTATE TOT/INTERNSHIP/Plan2Learn/Project/BookingResourcesApp/WebClient/Pages/Modals/ToastModal.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW9kYWxzXFRvYXN0TW9kYWwucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-76rv6o0no8
+
+[C:/Users/baico/OneDrive - ViaUC/FACULTATE TOT/INTERNSHIP/Plan2Learn/Project/BookingResourcesApp/WebClient/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-texym03vzf
+
+[C:/Users/baico/OneDrive - ViaUC/FACULTATE TOT/INTERNSHIP/Plan2Learn/Project/BookingResourcesApp/WebClient/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-tva32fkiip
+
+[C:/Users/baico/OneDrive - ViaUC/FACULTATE TOT/INTERNSHIP/Plan2Learn/Project/BookingResourcesApp/WebClient/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/baico/OneDrive - ViaUC/FACULTATE TOT/INTERNSHIP/Plan2Learn/Project/BookingResourcesApp/WebClient/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/baico/OneDrive - ViaUC/FACULTATE TOT/INTERNSHIP/Plan2Learn/Project/BookingResourcesApp/WebClient/Pages/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

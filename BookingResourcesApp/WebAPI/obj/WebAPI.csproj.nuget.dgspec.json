@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\baico\\OneDrive - ViaUC\\FACULTATE TOT\\INTERNSHIP\\Plan2Learn\\Project\\BookingResourcesApp\\WebApi\\WebAPI.csproj": {}
+    "C:\\Users\\baico\\OneDrive - ViaUC\\FACULTATE TOT\\INTERNSHIP\\Plan2Learn\\Project\\BookingResourcesApp\\WebAPI\\WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\baico\\OneDrive - ViaUC\\FACULTATE TOT\\INTERNSHIP\\Plan2Learn\\Project\\BookingResourcesApp\\WebApi\\WebAPI.csproj": {
+    "C:\\Users\\baico\\OneDrive - ViaUC\\FACULTATE TOT\\INTERNSHIP\\Plan2Learn\\Project\\BookingResourcesApp\\WebAPI\\WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\baico\\OneDrive - ViaUC\\FACULTATE TOT\\INTERNSHIP\\Plan2Learn\\Project\\BookingResourcesApp\\WebApi\\WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\baico\\OneDrive - ViaUC\\FACULTATE TOT\\INTERNSHIP\\Plan2Learn\\Project\\BookingResourcesApp\\WebAPI\\WebAPI.csproj",
         "projectName": "WebAPI",
-        "projectPath": "C:\\Users\\baico\\OneDrive - ViaUC\\FACULTATE TOT\\INTERNSHIP\\Plan2Learn\\Project\\BookingResourcesApp\\WebApi\\WebAPI.csproj",
+        "projectPath": "C:\\Users\\baico\\OneDrive - ViaUC\\FACULTATE TOT\\INTERNSHIP\\Plan2Learn\\Project\\BookingResourcesApp\\WebAPI\\WebAPI.csproj",
         "packagesPath": "C:\\Users\\baico\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\baico\\OneDrive - ViaUC\\FACULTATE TOT\\INTERNSHIP\\Plan2Learn\\Project\\BookingResourcesApp\\WebApi\\obj\\",
+        "outputPath": "C:\\Users\\baico\\OneDrive - ViaUC\\FACULTATE TOT\\INTERNSHIP\\Plan2Learn\\Project\\BookingResourcesApp\\WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\baico\\AppData\\Roaming\\NuGet\\NuGet.Config"

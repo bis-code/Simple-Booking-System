@@ -1,0 +1,258 @@
+@page "/Resources"
+@using WebClient.Data
+@using WebClient.Model
+@using Modals
+@inject IResourceService _resourceService
+@inject IBookingService _bookingService
+@inject NavigationManager NavigationManager
+
+<h3>Resources</h3>
+
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <label style="color: red">@errorMessage</label>
+}
+@if (resources == null)
+{
+    <p>
+        <em>There's no resource, you want to add?</em>
+        <div>&nbsp;</div>
+        <button type="button" class="btn btn-primary btn-sm" @onclick="@(() => ShowAdd())">Add</button>
+    </p>
+}
+else if (!resources.Any())
+{
+    <p>
+        <em>There's no resource, you want to add?</em>
+        <div>&nbsp;</div>
+        <button type="button" class="btn btn-primary btn-sm" @onclick="@(() => ShowAdd())">Add</button>
+    </p>
+}
+else
+{
+    <div>
+        <label>Would you like to add a new resource?</label>
+        <button type="button" class="btn btn-primary btn-sm" @onclick="@(() => ShowAdd())">Add</button>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Bookings</th>
+                <th scope="col">Remove</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in resources)
+            {
+                <tr>
+                    <td>
+                        @item.ResourceId
+                    </td>
+                    <td>@item.Name</td>
+                    <td>@item.Quantity</td>
+                    <td>
+                        @if (item.Bookings.Any())
+                        {
+                            item.Bookings.Count();
+                        }
+                        else
+                        {
+                            <p>No bookings</p>
+                        }
+                        <hr/>
+                        <a @onclick="@(() => ShowBooking(item))">book here</a>
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+                //for booking
+            }
+            </tbody>
+        </table>
+    </div>
+}
+
+@if (showModalBooking)
+{
+    <BookingResourceModal>
+        <h3>Make booking</h3>
+        <hr/>
+        <div class="form-group">
+            <p>
+                <label>
+                    Date From
+                </label>
+                <input type="date" required @bind-value="@bookingToAdd.DateFrom"/>
+            </p>
+        </div>
+        <div class="form-group">
+            <p>
+                <label>
+                    Date To
+                </label>
+                <input type="date" required @bind-value="@bookingToAdd.DateTo"/>
+            </p>
+        </div>
+        <div class="form-group">
+            <p>
+                <label>
+                    Quantity
+                </label>
+                <input type="number" required @bind-value="@bookingToAdd.BookedQuantity"/>
+            </p>
+        </div>
+        @if (!string.IsNullOrEmpty(bookResourceErrorMessage))
+        {
+            <div>
+                <label style="color: red">@bookResourceErrorMessage</label>
+            </div>
+        }
+        <div>
+            <button style="margin-right: 10px" @onclick="(() => AcceptBooking(resourceForBooking))">Book</button>
+            <button style="margin-left: 10px" @onclick="@(() => showModalBooking = false)">Cancel</button>
+        </div>
+    </BookingResourceModal>
+}
+
+@if (showModalAdd)
+{
+    <AddResourceModal>
+        <h3>Add Resource</h3>
+        <hr/>
+        <div style="margin-bottom: 5px">
+            <label style="font-weight: bold">Resource Name</label>
+        </div>
+        <div style="margin-bottom: 5px">
+            <textarea style="width: 20ch; border-radius: 10px; padding: 3px;" @bind="resourceToAdd.Name"/>
+        </div>
+        <div style="margin-bottom: 5px">
+            <label style="font-weight: bold">Quantity</label>
+        </div>
+        <div style="margin-bottom: 5px">
+            <input type="number" min="0" style="width: 10ch; border-radius: 10px; padding: 3px; text-align: center" @bind="@resourceToAdd.Quantity"/>
+        </div>
+        @if (!string.IsNullOrEmpty(addErrorMessage))
+        {
+            <div>
+                <label style="color: red">@addErrorMessage</label>
+            </div>
+        }
+        <div style="margin-top: 15px">
+            <button style="margin-right: 10px" @onclick="() => AcceptAdd()">Add</button>
+            <button style="margin-left: 10px" @onclick="@(() => showModalAdd = false)">Cancel</button>
+        </div>
+    </AddResourceModal>
+}
+
+@if (showSuccessfulBooking)
+{
+    <ToastModal>
+        <p>EMAIL SENT TO admin@admin.com FOR CREATED BOOKING WITH ID @newBookingId</p>
+        <button @onclick="@Proceed">Super!</button>
+    </ToastModal>
+}
+
+@code {
+    private IList<Resource> resources;
+    private IList<Booking> bookingsCheck;
+
+    private Resource resourceToAdd = new Resource();
+    private Booking bookingToAdd = new Booking();
+    private Resource resourceForBooking = new Resource();
+    private int? newBookingId;
+
+    private string addErrorMessage = string.Empty;
+    private string errorMessage = string.Empty;
+    private string bookResourceErrorMessage = string.Empty;
+
+    private bool showModalAdd;
+    private bool showModalBooking;
+    private bool showSuccessfulBooking;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            resources = await _resourceService.GetAllResourcesAsync();
+        }
+        catch (Exception e)
+        {
+            errorMessage = e.Message;
+        }
+    }
+
+    private void ShowAdd()
+    {
+        showModalAdd = true;
+    }
+
+    private async Task AcceptAdd()
+    {
+        try
+        {
+            await _resourceService.AddResourceAsync(resourceToAdd);
+            showModalAdd = false;
+            NavigationManager.NavigateTo("/Resources");
+        }
+        catch (Exception e)
+        {
+            addErrorMessage = e.Message;
+        }
+    }
+
+    private void ShowBooking(Resource resource)
+    {
+        resourceForBooking = resource;
+        showModalBooking = true;
+    }
+
+    private async Task AcceptBooking(Resource resource)
+    {
+        try
+        {
+            bookingToAdd.ResourceId = resource.ResourceId;
+            Resource updatedResource = resource;
+            if (updatedResource.Quantity > bookingToAdd.BookedQuantity)
+            {
+                updatedResource.Quantity -= bookingToAdd.BookedQuantity;
+            }
+            bookingsCheck = await _bookingService.GetAllBookingsAsync();
+            foreach (Booking booking in bookingsCheck)
+            {
+                if (booking.ResourceId == bookingToAdd.ResourceId)
+                {
+                    if (bookingToAdd.DateTo.CompareTo(booking.DateTo) == 1 || bookingToAdd.DateFrom.CompareTo(booking.DateTo) == -1)
+                    {
+                        throw new BookingAlreadyMadeException("There is already a booking made in that period.\n Please add another time.");
+                    }
+                }
+            }
+            await _resourceService.UpdateResourceAsync(updatedResource);
+            await _bookingService.AddBookingAsync(bookingToAdd);
+            bookingsCheck = await _bookingService.GetAllBookingsAsync();
+            newBookingId = bookingsCheck[^1].Id;
+            if (newBookingId != null)
+            {
+                Console.WriteLine($"EMAIL SENT TO admin@admin.com FOR CREATED BOOKING WITH ID {newBookingId}");
+            }
+            showModalBooking = false;
+            showSuccessfulBooking = true;
+        }
+        catch (Exception e)
+        {
+            bookResourceErrorMessage = e.Message;
+        }
+    }
+
+    private async Task Proceed()
+    {
+        NavigationManager.NavigateTo("/Resources");
+    }
+
+}
